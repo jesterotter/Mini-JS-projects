@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href="<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css" integrity="sha512-17AHGe9uFHHt+QaRYieK7bTdMMHBMi8PeWG99Mf/xEcfBLDCn0Gze8Xcx1KoSZxDnv+KnCC+os/vuQ7jrF/nkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />">
+    <title>Pokemon Types</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="centre-align">Pokemon Types</h1>
+        <input type="text" id="filterinput" placeholder="Search">
+        <ul class="collection width-header" id="names">
+            <li class="collection-header"> //creates a lists of the pokemon based on type
+                <h5>NORMAL</h5>
+                </li>
+                <li class="collection-item">
+                <a href="#">Tauros</a>
+                </li>
+                <li class="collection-item">
+                <a href="#">Ditto</a>
+                </li>
+                <li class="collection-item">
+                <a href="#">Snorlax</a>
+                </li>
+                <li class="collection-item">
+                <a href="#">Lickitung</a>
+                </li>
+            <li class="collection-header">
+                    <h5>Fire</h5>
+                </li>
+                    <li class="collection-item">
+                    <a href="#">Charmander</a>
+                </li>
+                <li class="collection-item">
+                    <a href="#">Vulpix</a>
+                </li>
+                <li class="collection-item">
+                    <a href="#">Ninetales</a>
+                </li>
+                <li class="collection-item">
+                    <a href="#">Growlithe</a>
+                </li>
+                <li class="collection-header">
+                    <h5>Water</h5>
+                </li>
+                    <li class="collection-item">
+                    <a href="#">Squirtle</a>
+                </li>
+                <li class="collection-item">
+                    <a href="#">Shellder</a>
+                </li>
+                <li class="collection-item">
+                    <a href="#">Psyduck</a>
+                </li>
+                <li class="collection-item">
+                    <a href="#">Lapras</a>
+                </li>
+                <li class="collection-header">
+                    <h5>Grass</h5>
+                </li>
+                    <li class="collection-item">
+                    <a href="#">Chikorita</a>
+                </li>
+                <li class="collection-item">
+                    <a href="#">Treecko</a>
+                </li>
+                <li class="collection-item">
+                    <a href="#">Bayleef</a>
+                </li>
+                <li class="collection-item">
+                    <a href="#">Cherubi</a>
+                </li>
+
+        </ul>
+    </div>
+
+    <script>
+        //get input element
+        let filterInput = document.getElementById('filterInput');
+        //add event listener
+        filterInput.addEventListener('keyup', filterNames);
+
+        function filterNames(){
+            //get value of input
+            let filterValue = document.getElementById('filterInput').value.toUppercase();
+
+
+            //get names ul
+            let ul = document.getElementById('names');
+            //get lis from ul
+            let li = ul.querySelectorAll('li.collection-item');
+
+
+            //loop through collection-item lis
+            for(let i = 0;i < li.length;i++){
+                let a = li[i].getElementsByTagName('a')[0];
+                //if matched
+                if(Normal.innerHTML.toUppercase().indexOf(filterValue) > -1)
+                {
+                li[i].style.display = '';
+                } else{
+                    li[i].style.display = 'none';
+                }
+                
+            }
+
+        }
+
+
+        </script>
+</body>
+</html>
